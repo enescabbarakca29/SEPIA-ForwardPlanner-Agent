@@ -1,0 +1,88 @@
+1. Move(p, loc1, loc2)
+   Parameters: p (peasant), loc1 (current location), loc2 (target location)
+   Preconditions:
+      - at(p, loc1)
+      - adjacent(loc1, loc2)
+   Add List:
+      - at(p, loc2)
+   Delete List:
+      - at(p, loc1)
+   Cost: 1
+
+2. HarvestGold(p, m)
+   Parameters: p (peasant), m (goldmine)
+   Preconditions:
+      - at(p, m)
+      - empty(p)
+      - gold_remaining(m) > 0
+   Add List:
+      - carrying(p, gold, 100)
+   Delete List:
+      - empty(p)
+   Cost: 1
+
+3. HarvestWood(p, f)
+   Parameters: p (peasant), f (forest)
+   Preconditions:
+      - at(p, f)
+      - empty(p)
+      - wood_remaining(f) > 0
+   Add List:
+      - carrying(p, wood, 100)
+   Delete List:
+      - empty(p)
+   Cost: 1
+
+4. DepositGold(p, th)
+   Parameters: p (peasant), th (townhall)
+   Preconditions:
+      - at(p, th)
+      - carrying(p, gold, 100)
+   Add List:
+      - empty(p)
+      - gold_tally += 100
+   Delete List:
+      - carrying(p, gold, 100)
+   Cost: 1
+
+5. DepositWood(p, th)
+   Parameters: p (peasant), th (townhall)
+   Preconditions:
+      - at(p, th)
+      - carrying(p, wood, 100)
+   Add List:
+      - empty(p)
+      - wood_tally += 100
+   Delete List:
+      - carrying(p, wood, 100)
+   Cost: 1
+
+6. BuildPeasant(th)
+   Parameters: th (townhall)
+   Preconditions:
+      - gold_tally >= 400
+      - available_food > current_peasants
+   Add List:
+      - peasants += 1
+   Delete List:
+      - gold_tally -= 400
+   Cost: 1
+
+7. Movek(k, loc1, loc2)   [k = 1, 2, 3]
+   Parameters: k (number of peasants), loc1, loc2
+   Preconditions:
+      - k peasants at loc1
+      - k peasants are idle
+   Add List:
+      - k peasants at loc2
+   Delete List:
+      - k peasants at loc1
+   Cost: 1  (parallel execution)
+
+8. Harvestk(k, r)   [r = goldmine or forest]
+   Similar to HarvestGold/Wood but with k peasants in parallel.
+   Cost: 1
+
+9. Depositk(k, th)
+   Similar to Deposit but with k peasants.
+   Cost: 1

@@ -1,0 +1,27 @@
+; Ana Kaynak Toplama Eylemleri (Tek Köylü için)
+
+Action(Move(from, to))
+    PRECOND: At(Peasant, from)
+    EFFECT:  NOT At(Peasant, from), At(Peasant, to)
+
+Action(HarvestGold(mine))
+    PRECOND: At(Peasant, mine), Holding(Peasant, Nothing), MineHasGold(mine)
+    EFFECT:  NOT Holding(Peasant, Nothing), Holding(Peasant, Gold), 
+             MineCapacity(mine) := MineCapacity(mine) - 100 
+
+Action(HarvestWood(forest))
+    PRECOND: At(Peasant, forest), Holding(Peasant, Nothing), ForestHasWood(forest)
+    EFFECT:  NOT Holding(Peasant, Nothing), Holding(Peasant, Wood), 
+             ForestCapacity(forest) := ForestCapacity(forest) - 100 
+
+Action(Deposit(resource))
+    PRECOND: At(Peasant, TownHall), Holding(Peasant, resource)
+    EFFECT:  NOT Holding(Peasant, resource), Holding(Peasant, Nothing), 
+             TotalResources(resource) := TotalResources(resource) + 100 
+
+; Yeni Eylem: Paralelizm için yatırım
+
+Action(BuildPeasant())
+    PRECOND: At(TownHall, TownHall), CurrentGold >= 400, FoodSupply > PeasantCount
+    EFFECT:  CurrentGold := CurrentGold - 400, 
+             PeasantCount := PeasantCount + 1 

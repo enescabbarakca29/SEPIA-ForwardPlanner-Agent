@@ -1,0 +1,36 @@
+===================================================
+2. RESOURCE COLLECTION 1 SONUÇLARI (BuildPeasant YOK)
+===================================================
+
+SENARYO 2(a): HEDEF 200 ALTIN / 200 ODUN 
+  * Kullanılan Agent Argümanları: 200, 200
+  * Planlayıcı Tarafından Genişletilen Düğüm Sayısı (N): 25
+  * Gerçekleşen Makespan (Toplam Adım Sayısı): 40
+  * Optimal Adım Sayısı(Yapılacak Eylem Sayısı): 16
+  * Optimal Strateji: En yakın maden ve ormanlardan yeterli miktarda kaynak toplar.
+
+SENARYO 2(b): HEDEF 1000 ALTIN / 1000 ODUN 
+  * Kullanılan Agent Argümanları: 1000, 1000
+  * Planlayıcı Tarafından Genişletilen Düğüm Sayısı (N): 38530
+  * Gerçekleşen Makespan (Toplam Adım Sayısı): 268
+  * Optimal Adım Sayısı(Yapılacak Eylem Sayısı): 80
+  * Optimal Strateji: BuildPeasant olmadığı için tek köylü ile tüm kaynakları (en uzak 5000'lik maden dahil) toplar.
+
+
+===================================================
+3. RESOURCE COLLECTION 2 SONUÇLARI (BuildPeasant AKTİF)
+===================================================
+
+SENARYO 3(a): HEDEF 1000 ALTIN / 1000 ODUN 
+  * Kullanılan Agent Argümanları: 1000, 1000
+  * Planlayıcı Tarafından Genişletilen Düğüm Sayısı (N): 10357917
+  * Gerçekleşen Makespan (Toplam Adım Sayısı): 254
+  * Optimal Adım Sayısı(Yapılacak Eylem Sayısı): 114
+  * Optimal Strateji: Köylü üretimini uzun vadede kar sağlıyorsa (400 altın kuralı) gerçekleştirir ve 2 veya 3 köylü ile paralel çalışır.
+
+SENARYO 3(b): HEDEF 3000 ALTIN / 2000 ODUN 
+  * Kullanılan Agent Argümanları: 3000, 2000
+  * Planlayıcı Tarafından Genişletilen Düğüm Sayısı (N): 46633
+  * Gerçekleşen Makespan (Toplam Adım Sayısı): 648
+  * Optimal Adım Sayısı(Yapılacak Eylem Sayısı): 234
+  * Optimal Strateji: Köylü üretimini uzun vadede kar sağlıyorsa (400 altın kuralı) gerçekleştirir ve 2 veya 3 köylü ile paralel çalışır.
